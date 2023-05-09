@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone the Git') {
             steps {
-                git 'https://github.com/Pratikshadukare/jsonification.git'
+                git 'https://github.com/25shrutika/jsonification.git'
             }
         }
         stage('Build') {
@@ -32,7 +32,7 @@ pipeline {
                 withSonarQubeEnv('sonarqube') {
                     sh "${scannerHome}/bin/sonar-scanner \
                     -D sonar.login=admin \
-                    -D sonar.password=2022bali@123 \
+                    -D sonar.password=25shrutika \
                     -D sonar.projectKey=javaScanner \
                     -D sonar.projectName=javaScanner \
                     -D sonar.projectVersion=1.0 \
