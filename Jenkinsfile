@@ -1,19 +1,19 @@
 pipeline {
   agent any
-  environment {
-    SCANNER_HOME = tool 'SonarQube'
-  }
   stages {
+    stage('Build') {
+      steps {
+        sh 'echo "Building..."'
+      }
+    }
     stage('Test') {
       steps {
-        withSonarQubeEnv('SonarQube') {
-          sh "${SCANNER_HOME}/bin/sonar-scanner \
-            -Dsonar.projectKey=JavaPipeline \
-            -Dsonar.projectName=Unreal-Engine-pro2 \
-            -Dsonar.sources=. \
-            -Dsonar.java.binaries=**/target/classes \
-            -Dsonar.exclusions=**/*.java"
-        }
+        sh 'echo "Testing..."'
+      }
+    }
+    stage('Deploy') {
+      steps {
+        sh 'echo "Deploying..."'
       }
     }
   }
