@@ -8,7 +8,7 @@ pipeline {
       steps {
         withSonarQubeEnv('SonarQube') {
           sh "${SCANNER_HOME}/bin/sonar-scanner \
-          -D sonar.projectKey=sim_javaPipeline \
+          -D sonar.projectKey=Demo \
           -D sonar.projectName=pipeline \
             "
         }
